@@ -1,0 +1,33 @@
+{
+  "name": "codexten/yii-gii",
+  "type": "yii2-extension",
+  "description": "Extented gii for yii 2.0 or higher",
+  "keywords": [
+    "yiisoft",
+    "gii",
+    "codexten",
+    "yii2"
+  ],
+  "require": {
+    "yiisoft/yii2-gii": "~2.0.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "codexten\\yii\\gii\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0.x-dev"
+    },
+    "sconfig-plugin": {
+      "params": "src/config/params.php",
+      "core": "src/config/core.php",
+      "hidev": [
+        "$core",
+        "$nginx",
+        "src/config/hidev.php"
+      ]
+    }
+  }
+}
