@@ -6,7 +6,7 @@
  * Time: 6:06 PM
  */
 
-namespace codexten\yii\gii\model;
+namespace codexten\yii\generators\model;
 
 use entero\db\ActiveRecord;
 use yii\gii\generators\model\Generator;

@@ -35,7 +35,7 @@ return [
     ],
     'controllerMap' => [
         'gii' => [
-            'class' => \entero\dev\console\GiiController::class,
+            'class' => \codexten\yii\gii\console\GiiController::class,
             'defaultParams' => [
                 'enableI18N' => true,
                 'overwrite' => false,

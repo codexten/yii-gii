@@ -6,7 +6,7 @@
  * Time: 8:38 PM
  */
 
-namespace codexten\yii\gii\package;
+namespace codexten\yii\generators\package;
 
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
