@@ -20,14 +20,8 @@
     "branch-alias": {
       "dev-master": "2.0.x-dev"
     },
-    "sconfig-plugin": {
-      "params": "src/config/params.php",
-      "core": "src/config/core.php",
-      "hidev": [
-        "$core",
-        "$nginx",
-        "src/config/hidev.php"
-      ]
+    "config-plugin": {
+      "hidev": "config/hidev.php"
     }
   }
 }
