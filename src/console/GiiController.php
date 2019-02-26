@@ -67,7 +67,7 @@ class GiiController extends \yii\console\Controller
         }
     }
 
-    public function actionModel($repo)
+    public function actionModel($repo = 'root')
     {
         $config = $this->getGiiConfig('model', $repo);
         if (!$config) {
@@ -96,7 +96,7 @@ class GiiController extends \yii\console\Controller
         }
     }
 
-    public function actionCrud($repo)
+    public function actionCrud($repo = 'root')
     {
         $config = $this->getGiiConfig('crud', $repo);
         if (!$config) {

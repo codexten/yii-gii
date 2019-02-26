@@ -6,7 +6,7 @@
  * Time: 6:06 PM
  */
 
-namespace codexten\yii\generators\crud;
+namespace codexten\yii\gii\generators\crud;
 
 use entero\module\api\ActiveController;
 use entero\web\CrudController;

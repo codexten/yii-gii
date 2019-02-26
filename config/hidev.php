@@ -13,19 +13,19 @@ return [
             'allowedIPs' => explode(',', $params['debug.allowedIps']),
             'generators' => [
                 'model' => [
-                    'class' => \codexten\yii\gii\model\ModelGenerator::class,
+                    'class' => \codexten\yii\gii\generators\model\ModelGenerator::class,
                     'templates' => [
                         'default' => '@entero/dev/generators/model/templates/default',
                     ],
                 ],
                 'crud' => [
-                    'class' => \codexten\yii\gii\crud\CrudGenerator::class,
+                    'class' => \codexten\yii\gii\generators\crud\CrudGenerator::class,
                     'templates' => [
                         'default' => '@entero/dev/generators/crud/templates/default',
                     ],
                 ],
                 'package' => [
-                    'class' => \codexten\yii\gii\package\PackageGenerator::class,
+                    'class' => \codexten\yii\gii\generators\package\PackageGenerator::class,
                     'templates' => [
                         'default' => '@entero/dev/generators/package/templates/default',
                     ],
@@ -42,7 +42,7 @@ return [
                 'interactive' => true,
             ],
             'defaultCrudParams' => [
-                'baseControllerClass' => \entero\web\CrudController::class,
+                'baseControllerClass' => \codexten\yii\web\CrudController::class,
             ],
 
         ],
