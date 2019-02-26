@@ -11,6 +11,12 @@ namespace codexten\yii\gii\generators\model;
 use codexten\yii\db\ActiveRecord;
 use yii\gii\generators\model\Generator;
 
+/**
+ * Class ModelGenerator
+ *
+ * @property ActiveRecord $modelClass
+ * @package codexten\yii\gii\generators\model
+ */
 class ModelGenerator extends Generator
 {
     public $baseClass = ActiveRecord::class;

@@ -7,7 +7,6 @@ use yii\helpers\StringHelper;
 /* @var $generator yii\gii\generators\crud\Generator */
 
 $urlParams = $generator->generateUrlParams();
-$apiUrl = '@'.Inflector::pluralize($generator->getControllerID());
 
 echo "<?php\n";
 ?>
@@ -27,12 +26,7 @@ $this->title = <?= strtr($generator->generateString('Update ' .
 
 <?= '<?' ?>php $page->beginContent('form') ?>
 
-<?= '<?' ?>= $this->render('_form', [
-        'action' => "<?= $apiUrl ?>/{$model->id}",
-        'fetchUrl' => ["<?= $apiUrl ?>/{$model->id}"],
-        'method' => 'patch',
-    ]
-) ?>
+<?= '<?' ?>= $this->render('_form', ['model' => $model]) ?>
 
 <?= '<?' ?>php $page->endContent() ?>
 

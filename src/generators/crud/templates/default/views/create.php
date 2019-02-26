@@ -22,10 +22,7 @@ $this->title = <?= $generator->generateString('Create ' . Inflector::camel2words
 
 <?= '<?' ?>php $page->beginContent('form') ?>
 
-<?= '<?' ?>= $this->render('_form', [
-    'action' => '<?= $apiUrl ?>',
-    'method' => 'post',
-]) ?>
+<?= '<?' ?>= $this->render('_form', ['model' => $model]) ?>
 
 <?= '<?' ?>php $page->endContent() ?>
 

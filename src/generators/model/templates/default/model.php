@@ -13,6 +13,7 @@
 /* @var $labels string[] list of attribute labels (name => label) */
 /* @var $rules string[] list of validation rules */
 /* @var $relations array list of relations (name => relation declaration) */
+/* @var $model \yii\db\ActiveRecord */
 
 echo "<?php\n";
 ?>
@@ -45,6 +46,9 @@ use yii\helpers\Url;
  */
 class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . "\n" ?>
 {
+    //const STATUS_ACTIVE = 1;
+    //const STATUS_INACTIVE = 0;
+
     /**
      * {@inheritdoc}
      */
@@ -178,4 +182,16 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
         return new <?= $queryClassFullName ?>(get_called_class());
     }
 <?php endif; ?>
+
+    ///**
+    //* statuses
+    //* @return array
+    //*/
+    //public static function statuses()
+    //{
+    //    return [
+    //        self::STATUS_ACTIVE => Yii::t('app', 'Active'),
+    //        self::STATUS_INACTIVE => Yii::t('app', 'Inactive'),
+    //    ];
+    //}
 }
