@@ -11,7 +11,7 @@ $apiUrl = '@'.Inflector::pluralize($generator->getControllerID());
 echo "<?php\n";
 ?>
 
-use entero\web\widgets\CreatePage;
+use codexten\yii\web\widgets\CreatePage;
 
 
 /* @var $this yii\web\View */

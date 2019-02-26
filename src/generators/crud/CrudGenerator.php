@@ -8,8 +8,8 @@
 
 namespace codexten\yii\gii\generators\crud;
 
-use entero\module\api\ActiveController;
-use entero\web\CrudController;
+use codexten\yii\module\api\ActiveController;
+use codexten\yii\web\CrudController;
 use Yii;
 use yii\gii\CodeFile;
 use yii\gii\generators\crud\Generator;

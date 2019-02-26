@@ -7,6 +7,7 @@
  */
 
 return [
+    'bootstrap' => ['generator'],
     'modules' => [
         'generator' => array_filter([
             'class' => 'yii\gii\Module',
@@ -15,19 +16,19 @@ return [
                 'model' => [
                     'class' => \codexten\yii\gii\generators\model\ModelGenerator::class,
                     'templates' => [
-                        'default' => '@entero/dev/generators/model/templates/default',
+                        'default' => '@codexten/yii/gii/generators/model/templates/default',
                     ],
                 ],
                 'crud' => [
                     'class' => \codexten\yii\gii\generators\crud\CrudGenerator::class,
                     'templates' => [
-                        'default' => '@entero/dev/generators/crud/templates/default',
+                        'default' => '@codexten/yii/gii/generators/crud/templates/default',
                     ],
                 ],
                 'package' => [
                     'class' => \codexten\yii\gii\generators\package\PackageGenerator::class,
                     'templates' => [
-                        'default' => '@entero/dev/generators/package/templates/default',
+                        'default' => '@codexten/yii/gii/generators/package/templates/default',
                     ],
                 ],
             ],

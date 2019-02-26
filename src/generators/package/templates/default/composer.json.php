@@ -4,7 +4,7 @@
 {
   "name": "<?= $generator->getPackageFullName() ?>",
   "type": "library",
-  "description": "Entero Package",
+  "description": "Yii Package",
   "autoload": {
     "psr-4": {
       "<?= $generator->namespace ?>": "src"

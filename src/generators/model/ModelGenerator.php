@@ -8,7 +8,7 @@
 
 namespace codexten\yii\gii\generators\model;
 
-use entero\db\ActiveRecord;
+use codexten\yii\db\ActiveRecord;
 use yii\gii\generators\model\Generator;
 
 class ModelGenerator extends Generator

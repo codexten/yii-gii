@@ -11,7 +11,7 @@ $urlParams = $generator->generateUrlParams();
 echo "<?php\n";
 ?>
 
-use entero\web\widgets\Page;
+use codexten\yii\web\widgets\Page;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */

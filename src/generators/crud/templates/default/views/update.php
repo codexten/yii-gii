@@ -12,7 +12,7 @@ $apiUrl = '@'.Inflector::pluralize($generator->getControllerID());
 echo "<?php\n";
 ?>
 
-use entero\web\widgets\UpdatePage;
+use codexten\yii\web\widgets\UpdatePage;
 
 /* @var $this yii\web\View */
 /* @var $model <?= ltrim($generator->modelClass, '\\') ?> */

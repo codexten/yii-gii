@@ -13,7 +13,7 @@ $apiUrl = '@'.Inflector::pluralize($generator->getControllerID());
 echo "<?php\n";
 ?>
 
-use entero\web\widgets\IndexPage;
+use codexten\yii\web\widgets\IndexPage;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */

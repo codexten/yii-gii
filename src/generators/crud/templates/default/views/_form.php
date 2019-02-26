@@ -17,7 +17,7 @@ $attributePrefix = Inflector::underscore($model->formName()) . '.';
 echo "<?php\n";
 ?>
 
-use entero\vue\widgets\Form;
+use codexten\yii\vue\widgets\Form;
 
 /* @var $this yii\web\View */
 /* @var $model <?= ltrim($generator->modelClass, '\\') ?> */
