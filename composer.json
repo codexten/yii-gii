@@ -9,7 +9,7 @@
     "yii2"
   ],
   "require": {
-    "yiisoft/yii2-gii": "~2.0.7"
+    "yiisoft/yii2-gii": "~2.0.0"
   },
   "autoload": {
     "psr-4": {
