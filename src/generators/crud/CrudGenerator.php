@@ -44,10 +44,11 @@ class CrudGenerator extends Generator
     {
         $files = parent::generate();
 
-        $apiControllerFile = Yii::getAlias('@' . str_replace('\\', '/',
-                ltrim($this->apiControllerClass, '\\')) . '.php');
-
-        $files[] = new CodeFile($apiControllerFile, $this->render('apicontroller.php'));
+// API controller commented for temporary
+//        $apiControllerFile = Yii::getAlias('@' . str_replace('\\', '/',
+//                ltrim($this->apiControllerClass, '\\')) . '.php');
+//
+//        $files[] = new CodeFile($apiControllerFile, $this->render('apicontroller.php'));
 
 
         return $files;

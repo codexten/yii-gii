@@ -28,7 +28,7 @@ $this->title = Yii::t('<?= $generator->messageCategory ?>', '<?= Inflector::plur
 
 <?= '<?' ?>php $page->beginContent('main-actions') ?>
 
-<?= '<?' ?>= $page->renderButton('create', '/business-category/create', ['class' => ['btn-success']]) ?>
+<?= '<?' ?>= $page->renderButton('create', 'create', ['class' => ['btn-success']]) ?>
 
 <?= '<?' ?>php $page->endContent() ?>
 
