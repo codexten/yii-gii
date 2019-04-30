@@ -42,7 +42,7 @@ class GiiController extends \yii\console\Controller
             return;
         }
         $namespace = "{$config['namespace']}migrations";
-        $migrationPath = $this->getNamespacePath($namespace);
+
         $defaultParams = $this->en->getParams($repo);
         $defaultParams = ArrayHelper::merge($defaultParams, [
             'migration-namespaces' => $namespace,
@@ -50,16 +50,19 @@ class GiiController extends \yii\console\Controller
         ]);
         $defaultParams = ArrayHelper::merge($this->defaultParams, $this->defaultMigrationParams, $defaultParams);
         foreach ($config['migration'] as $name => $migrationConfig) {
-            if ($this->isMigrationExist($migrationPath, $name)) {
-                continue;
-            }
+
             $params = ArrayHelper::merge($defaultParams, []);
             $params = ArrayHelper::merge($params, $migrationConfig);
             $params = ArrayHelper::merge($this->defaultParams, $params);
+            $migrationPath = $this->getNamespacePath($params['migration-namespaces']);
+            if ($this->isMigrationExist($migrationPath, $name)) {
+                continue;
+            }
 
             ArrayHelper::remove($params, 'enableI18N');
             ArrayHelper::remove($params, 'overwrite');
             ArrayHelper::remove($params, 'messageCategory');
+            ArrayHelper::remove($params, 'namespace');
 
             $params[0] = $name;
 
