@@ -13,16 +13,28 @@
 /* @var $labels string[] list of attribute labels (name => label) */
 /* @var $rules string[] list of validation rules */
 /* @var $relations array list of relations (name => relation declaration) */
-/* @var $model \yii\db\ActiveRecord */
+/* @var $model ActiveRecord */
+
+$queryClassFullName=false;
+if($queryClassName){
+    $queryClassFullName = ($generator->ns === $generator->queryNs) ? $queryClassName : '\\' . $generator->queryNs . '\\' . $queryClassName;
+}
+
 
 echo "<?php\n";
-?>
+
+use yii\db\ActiveRecord;
+use yii\helpers\StringHelper; ?>
 
 namespace <?= $generator->ns ?>;
 
 use Yii;
 use yii\helpers\Url;
+use <?= '\\' . ltrim($generator->baseClass, '\\') . ";\n" ?>
+<?php if($queryClassFullName):?>
+use <?= '\\' . ltrim($queryClassFullName, '\\') . ";\n" ?>
 
+<?php endIf; ?>
 /**
  * This is the model class for table "<?= $generator->generateTableName($tableName) ?>".
  *
@@ -44,10 +56,8 @@ use yii\helpers\Url;
 <?php endforeach; ?>
 <?php endif; ?>
  */
-class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . "\n" ?>
+class <?= $className ?> extends <?=  StringHelper::basename(ltrim($generator->baseClass, '\\')) . "\n" ?>
 {
-    //const STATUS_ACTIVE = 1;
-    //const STATUS_INACTIVE = 0;
 
     /**
      * {@inheritdoc}
@@ -96,102 +106,19 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
         <?= $relation[0] . "\n" ?>
     }
 <?php endforeach; ?>
-<?php if ($queryClassName): ?>
+<?php if ($queryClassFullName): ?>
 <?php
-    $queryClassFullName = ($generator->ns === $generator->queryNs) ? $queryClassName : '\\' . $generator->queryNs . '\\' . $queryClassName;
     echo "\n";
 ?>
 
     /**
-     *{@inheritdoc}
-     */
-    public function canUpdate()
-    {
-        //if (!Yii::$app->user->can('partner.update')) {
-        //    return false;
-        //}
-
-        return parent::canUpdate();
-    }
-
-    /**
-     *{@inheritdoc}
-     */
-    public function canView()
-    {
-        //if (!Yii::$app->user->can('partner.view')) {
-        //    return false;
-        //}
-
-        return parent::canView();
-    }
-
-    /**
-     *{@inheritdoc}
-     */
-    public function canDelete()
-    {
-        //if (!Yii::$app->user->can('partner.delete')) {
-        //    return false;
-        //}
-
-        return parent::canView();
-    }
-
-    /**
      * {@inheritdoc}
-     */
-    public function getMeta()
-    {
-        $meta = parent::getMeta();
-
-        //if ($this->canView()) {
-        //    $meta['viewUrl'] = Url::to(['@partner/view', 'id' => $this->id]);
-        //}
-        //if ($this->canUpdate()) {
-        //    $meta['updateUrl'] = Url::to(['@partner/update', 'id' => $this->id]);
-        //}
-
-        return $meta;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function fields()
-    {
-        $fields = parent::fields();
-
-        return $fields;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function extraFields()
-    {
-        return [];
-    }
-
-    /**
-     * {@inheritdoc}
-     * @return <?= $queryClassFullName ?> the active query used by this AR class.
+     * @return <?= StringHelper::basename($queryClassFullName) ?> the active query used by this AR class.
      */
     public static function find()
     {
-        return new <?= $queryClassFullName ?>(get_called_class());
+        return new <?=  StringHelper::basename($queryClassFullName) ?>(get_called_class());
     }
 <?php endif; ?>
 
-    ///**
-    //* statuses
-    //* @return array
-    //*/
-    //public static function statuses()
-    //{
-    //    return [
-    //        self::STATUS_ACTIVE => Yii::t('app', 'Active'),
-    //        self::STATUS_INACTIVE => Yii::t('app', 'Inactive'),
-    //    ];
-    //}
 }

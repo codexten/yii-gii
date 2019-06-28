@@ -3,6 +3,8 @@
  * This is the template for generating the ActiveQuery class.
  */
 
+use yii\helpers\StringHelper;
+
 /* @var $this yii\web\View */
 /* @var $generator yii\gii\generators\model\Generator */
 /* @var $tableName string full table name */
@@ -24,21 +26,19 @@ echo "<?php\n";
 
 namespace <?= $generator->queryNs ?>;
 
+use <?= '\\' . ltrim($generator->queryBaseClass, '\\') . ";\n" ?>
+use <?= '\\' . ltrim($modelFullClassName, '\\') . ";\n" ?>
+
 /**
  * This is the ActiveQuery class for [[<?= $modelFullClassName ?>]].
  *
- * @see <?= $modelFullClassName . "\n" ?>
+ * @see <?= StringHelper::basename($modelFullClassName) . "\n" ?>
  */
-class <?= $className ?> extends <?= '\\' . ltrim($generator->queryBaseClass, '\\') . "\n" ?>
+class <?= $className ?> extends <?= StringHelper::basename($generator->queryBaseClass) . "\n" ?>
 {
-    /*public function active()
-    {
-        return $this->andWhere('[[status]]=1');
-    }*/
-
     /**
      * {@inheritdoc}
-     * @return <?= $modelFullClassName ?>[]|array
+     * @return <?=StringHelper::basename($modelFullClassName) ?>[]|array
      */
     public function all($db = null)
     {
@@ -47,7 +47,7 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->queryBaseClass, '\\
 
     /**
      * {@inheritdoc}
-     * @return <?= $modelFullClassName ?>|array|null
+     * @return <?= StringHelper::basename($modelFullClassName) ?>|array|null
      */
     public function one($db = null)
     {
